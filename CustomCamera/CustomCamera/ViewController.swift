@@ -7,9 +7,15 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
 
+    let captureSession = AVCaptureSession()
+    let capturePhotoOutput = AVCapturePhotoOutput()
+    var previewLayer: AVCaptureVideoPreviewLayer?
+    var captureDevice: AVCaptureDevice?
+    var cameraflag = true
     
     @IBOutlet weak var previewView: UIView!
     
