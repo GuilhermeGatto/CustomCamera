@@ -30,10 +30,16 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2lX-KN-31c">
                                 <rect key="frame" x="131.5" y="592" width="112.5" height="30"/>
                                 <state key="normal" title="Capturar"/>
+                                <connections>
+                                    <action selector="capture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sHM-jf-ehg"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wmC-mP-HPV">
                                 <rect key="frame" x="289" y="592" width="60" height="30"/>
                                 <state key="normal" title="trocar"/>
+                                <connections>
+                                    <action selector="changeCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kIr-Nd-pV6"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -51,6 +57,9 @@
                             <constraint firstItem="iJc-st-fzp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="lSR-hs-9Bw"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="previewView" destination="iJc-st-fzp" id="gvP-3N-Dpv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
