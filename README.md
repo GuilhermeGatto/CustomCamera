@@ -171,4 +171,5 @@ Vamos entener essa função:
 
 Após criada as funções **beginSession()** e **setDevice()**, precisamos adicionar no arquivo **Info.plist** a permissão de uso da camera, para isso devemos adicionar a **Privacy - Camera Usage Description**, conforme imagem abaixo:
 
+<img width="718" alt="screen shot 2017-08-04 at 20 08 55" src="https://user-images.githubusercontent.com/7603806/28990160-11f1d5d2-7951-11e7-8ad3-d749895186ac.png">
 
