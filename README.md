@@ -196,6 +196,76 @@ class ViewController: UIViewController {
 Feito todos os passos anteriores, é hora de vermos o resultado. Para isso vale lembrar que o simulador nao dispõe de camera, sendo assim necessario executar a aplicação em seu aparelho.\
 Ao executar você deverá ver a imagem da camera e dois botões, porem ainda sem implementação.
 
+![image03](https://user-images.githubusercontent.com/7603806/28991637-e91eca38-7960-11e7-85e5-5aaf000af2f7.jpg)
+
+Vamos começar a persolanizar nossa camera, para isso iremos implementar a action **changeCamera()** e criar uma nova função chamada **endSession()**.
+
+```swift
+import UIKit
+import AVFoundation
+
+class ViewController: UIViewController {
+
+   ...
+   
+    @IBAction func changeCamera(_ sender: Any) {
+        cameraflag = !cameraflag
+        endSession()
+        setDevice()
+    }
+    
+    func endSession(){
+        captureSession.removeInput(captureSession.inputs[0] as! AVCaptureDeviceInput )
+    }
+   
+   ...
+```
+
+Vamos entender essas funções:\
+Começando pela **endSession**, essa implementação remove a sessão de camera existente no momento. Isso é feito para que ao trocarmos a flag da orientação da camera na action **changeCamera()** possamos iniciar uma nova sessão, dessa vez com a orientação inversa da anterior exibida.\
+
+Executando novamente o aplicativo, note que agora o botão **trocar** altera a orientação da camera.
+\
+*caso não tenha conseguido o resultado esperado, verifique se todos os passos acima foram feitos corretamente!*
+\
+Aplicação rodando como o esperado, vamos agora adicionar em nossa **ViewController** a interface do delegate **AVCapturePhotoDelegate** e implementar a funcar **capture()** obrigatoria ao usarmos a interface *AVCapturePhotoDelegate*, lembrando que essa função não é a mesma da action criada anteriormente!.
+
+```swift
+import UIKit
+import AVFoundation
+
+class ViewController: UIViewController, AVCapturePhotoDelegate {
+ 
+   ...
+   
+   func capture(_ captureOutput: AVCapturePhotoOutput, didFinishProcessingPhotoSampleBuffer photoSampleBuffer: CMSampleBuffer?, previewPhotoSampleBuffer: CMSampleBuffer?, resolvedSettings: AVCaptureResolvedPhotoSettings, bracketSettings: AVCaptureBracketedStillImageSettings?, error: Error?) {
+        if let error = error {
+            print(error.localizedDescription)
+        }
+        // se nao houver nenhum erro com a imagem, imprimir no console o tamanho dela
+        if let sampleBuffer = photoSampleBuffer, let previewBuffer = previewPhotoSampleBuffer, let dataImage = AVCapturePhotoOutput.jpegPhotoDataRepresentation(forJPEGSampleBuffer: sampleBuffer, previewPhotoSampleBuffer: previewBuffer) {
+            print(UIImage(data: dataImage)?.size ?? "?")           
+        }
+    }
+
+
+}
+```
+
+Vamos finalmente implementar a action **capture()** para que possamos capturar a imagem da camera.
+
+```swift
+import UIKit
+import AVFoundation
+
+class ViewController: UIViewController, AVCapturePhotoDelegate {
+ 
+   ...
+
+}
+```
+
+
 
 
 
