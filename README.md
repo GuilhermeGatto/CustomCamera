@@ -350,7 +350,7 @@ Vamos agora ao momento tão esperado, execute o aplicativo e vejá como ficou o 
 ![image04](https://user-images.githubusercontent.com/7603806/28993834-9fae5f18-7996-11e7-931c-dbb839dc42d4.jpg)
 
 
-Esse tutorial fica por aqui, caso tenha interesse em salvar a imagem customizada, siga o tutorial [Salvando Foto com Overlay](https://github.com/GuilhermeGatto/Salvando-Foto-com-Overlay).
+Esse tutorial fica por aqui, caso tenha interesse em salvar a imagem customizada, siga o tutorial [Salvando e Compartilhando Foto com Overlay](https://github.com/GuilhermeGatto/salvando-e-compartilhando-imagens-customizadas).
 
 Obrigado!
 
