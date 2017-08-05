@@ -17,6 +17,9 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     var captureDevice: AVCaptureDevice?
     var cameraflag = true
     
+    var imageView: UIImageView?
+    var img: UIImage = #imageLiteral(resourceName: "overlay")
+    
     @IBOutlet weak var previewView: UIView!
     
     
@@ -105,7 +108,13 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         super.viewDidLayoutSubviews()
         captureSession.startRunning()
         previewLayer?.frame = self.previewView.bounds
+        // ajusta o overlay na view
+        imageView = UIImageView(image: img)
+        imageView?.contentMode = .scaleToFill
         
+        imageView?.frame = CGRect(x: Double(self.previewView.center.x - self.previewView.frame.width / 4 ), y: Double(self.previewView.center.y - self.previewView.frame.height / 8), width: Double(self.previewView.frame.width / 2 ), height: Double(self.previewView.frame.height / 4))
+        // adiciona o overlay na view
+        self.previewView.addSubview(imageView!)
     }
     
     func capture(_ captureOutput: AVCapturePhotoOutput, didFinishProcessingPhotoSampleBuffer photoSampleBuffer: CMSampleBuffer?, previewPhotoSampleBuffer: CMSampleBuffer?, resolvedSettings: AVCaptureResolvedPhotoSettings, bracketSettings: AVCaptureBracketedStillImageSettings?, error: Error?) {
