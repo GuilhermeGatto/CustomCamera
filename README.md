@@ -173,3 +173,29 @@ Após criada as funções **beginSession()** e **setDevice()**, precisamos adici
 
 <img width="718" alt="screen shot 2017-08-04 at 20 08 55" src="https://user-images.githubusercontent.com/7603806/28990160-11f1d5d2-7951-11e7-8ad3-d749895186ac.png">
 
+Agora que já adicionamos a permissão de uso da camera, precisamos sobreescrever a função **viewDidLayoutSubviews()**, ela é necessaria para podermos modificar as views adicionas na viewController.
+
+```swift
+import UIKit
+import AVFoundation
+
+class ViewController: UIViewController {
+
+   ...
+   
+   override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        captureSession.startRunning()
+        previewLayer?.frame = self.previewView.bounds
+        
+    }
+   
+   ...
+```
+
+Feito todos os passos anteriores, é hora de vermos o resultado. Para isso vale lembrar que o simulador nao dispõe de camera, sendo assim necessario executar a aplicação em seu aparelho.\
+Ao executar você deverá ver a imagem da camera e dois botões, porem ainda sem implementação.
+
+
+
+
