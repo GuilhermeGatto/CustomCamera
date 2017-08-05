@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
 
     let captureSession = AVCaptureSession()
     let capturePhotoOutput = AVCapturePhotoOutput()
@@ -28,6 +28,18 @@ class ViewController: UIViewController {
 
     
     @IBAction func capture(_ sender: Any) {
+        
+        if let _ = capturePhotoOutput.connection(withMediaType: AVMediaTypeVideo) {
+            let settings = AVCapturePhotoSettings()
+            let previewPixelType = settings.availablePreviewPhotoPixelFormatTypes.first!
+            let previewFormat = [kCVPixelBufferPixelFormatTypeKey as String: previewPixelType,
+                                 kCVPixelBufferWidthKey as String: 160,
+                                 kCVPixelBufferHeightKey as String: 160]
+            settings.previewPhotoFormat = previewFormat
+            capturePhotoOutput.capturePhoto(with: settings, delegate: self)
+        }
+
+        
     }
     
     @IBAction func changeCamera(_ sender: Any) {
@@ -95,6 +107,18 @@ class ViewController: UIViewController {
         previewLayer?.frame = self.previewView.bounds
         
     }
+    
+    func capture(_ captureOutput: AVCapturePhotoOutput, didFinishProcessingPhotoSampleBuffer photoSampleBuffer: CMSampleBuffer?, previewPhotoSampleBuffer: CMSampleBuffer?, resolvedSettings: AVCaptureResolvedPhotoSettings, bracketSettings: AVCaptureBracketedStillImageSettings?, error: Error?) {
+        if let error = error {
+            print(error.localizedDescription)
+        }
+        
+        if let sampleBuffer = photoSampleBuffer, let previewBuffer = previewPhotoSampleBuffer, let dataImage = AVCapturePhotoOutput.jpegPhotoDataRepresentation(forJPEGSampleBuffer: sampleBuffer, previewPhotoSampleBuffer: previewBuffer) {
+            print(UIImage(data: dataImage)?.size ?? "?")
+        }
+    }
 
+    
+    
 }
 
