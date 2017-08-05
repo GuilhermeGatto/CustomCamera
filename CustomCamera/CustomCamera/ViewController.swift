@@ -81,6 +81,13 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        captureSession.startRunning()
+        previewLayer?.frame = self.previewView.bounds
+        
+    }
 
 }
 
