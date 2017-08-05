@@ -304,6 +304,7 @@
 				1D07A4151F351F5000A65C91 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
