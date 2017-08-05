@@ -31,6 +31,13 @@ class ViewController: UIViewController {
     }
     
     @IBAction func changeCamera(_ sender: Any) {
+        cameraflag = !cameraflag
+        endSession()
+        setDevice()
+    }
+    
+    func endSession(){
+        captureSession.removeInput(captureSession.inputs[0] as! AVCaptureDeviceInput )
     }
 
     
