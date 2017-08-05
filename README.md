@@ -64,8 +64,7 @@ class ViewController: UIViewController {
     
     ...
 ```
->Vamos entender para que funciona cada variavel criada: 
-
+>Vamos entender para que funciona cada variavel criada: \
 >1. É responsavel por iniciar uma sessão da camera.
 >2. É responsavel por capturar a imagem.
 >3. É responsavel por mostrar a previa da captura da imagem.
@@ -108,8 +107,7 @@ class ViewController: UIViewController {
    ...
 ```
 
->Vamos entender o que essa função faz:
-
+>Vamos entender o que essa função faz:\
 >1. Tenta adicionar um dispositivo na sessão de captura.
 >2. Caso possivel adicionar o dispositivo, ele é finalmente adicionado na sessão e também é adicionada a captura de imagem.
 
@@ -163,8 +161,7 @@ class ViewController: UIViewController {
    ...
 ```
 
->Vamos entender essa função:
-
+>Vamos entender essa função:\
 >1. Responsavel por definir a qualidade da imagem que vai ser capturada. Necessario tomar cuidado com essa linha, pois caso coloque a opção *AVCaptureSessionPreset1920x1080* por exemplo, com a camera frontal ocorre erro.
 >2. Responsavel por procurar algum dispositivo de camera.
 >3. Responsavel por definir a orientação da camera (traseira ou frontal).
@@ -252,7 +249,7 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
 
 }
 ```
->Vamos entender essa função:
+>Vamos entender essa função:\
 >1. Caso não ocorra nenhum erro com a imagem, ele imprime no console o tamanho da imagem capturada.
 
 Vamos finalmente implementar a action **capture()** para que possamos capturar a imagem da camera.
@@ -289,7 +286,7 @@ class ViewController: UIViewController, AVCapturePhotoDelegate {
 }
 ```
 
->Vamos entender essa função:
+>Vamos entender essa função:\
 >1. Se houver conexão com a saida de imagem, realiza as configurações da imagem.
 >2. Captura a imagem com as configurações definidas acima.
 
@@ -343,7 +340,7 @@ class ViewController: UIViewController, AVCapturePhotoDelegate {
 
 }
 ```
->Vamos entender essa função:
+>Vamos entender essa função:\
 >1. Adicionamos a imagem de nosso overlay em uma view.
 >2. Configuramos a nossa a posição em que nossa view ficara localizada em cima da sessão, nesse caso é configurado que o eixo x ficará centralizado, o eixo y ficará centralizado também, a largura será metade da largura total da sessão e a altura será de um quarto da altura total da sessão.
 >3. Adicionamos o overlay na sessão.
