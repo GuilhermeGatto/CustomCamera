@@ -348,12 +348,12 @@ class ViewController: UIViewController, AVCapturePhotoDelegate {
 >2. Configuramos a nossa a posição em que nossa view ficara localizada em cima da sessão, nesse caso é configurado que o eixo x ficará centralizado, o eixo y ficará centralizado também, a largura será metade da largura total da sessão e a altura será de um quarto da altura total da sessão.
 >3. Adicionamos o overlay na sessão.
 
-Esse tutorial fica por aqui, caso tenha interesse em salvar a imagem customizada, siga o tutorial [Salvando Foto com Overlay](#).
+Esse tutorial fica por aqui, caso tenha interesse em salvar a imagem customizada, siga o tutorial [Salvando Foto com Overlay](https://github.com/GuilhermeGatto/Salvando-Foto-com-Overlay).
 
 Obrigado!
 
 ### Tutorial criado por:
-#### Bruno Cruz - [Linkedin](https://www.linkedin.com/in/bruno-cruz-939a0ab8/) | [Github](#)
-#### Guilherme Gatto - [Linkedin](https://www.linkedin.com/in/guilhermegatto/) | [Github](#)
+#### Bruno Cruz - [Linkedin](https://www.linkedin.com/in/bruno-cruz-939a0ab8/) | [Github](https://github.com/brunocruzz)
+#### Guilherme Gatto - [Linkedin](https://www.linkedin.com/in/guilhermegatto/) | [Github](https://github.com/GuilhermeGatto)
 
 
