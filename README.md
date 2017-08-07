@@ -292,7 +292,7 @@ class ViewController: UIViewController, AVCapturePhotoDelegate {
 
 *Executando o aplicativo a partir dessa parte, ao clicar no botão **capturar** é impresso no console o tamanho da imagem capturada*
 
-Chegou a hora de finalmente customizar sua sessão da camera, para isso iremos adicionar um overlay sobre a sessão. Para iniciarmos essa parte, é necessario colocar o overlay desejado na pasta **Assets.xcassets**.\
+Chegou a hora de finalmente customizar sua sessão da camera, para isso iremos adicionar um overlay sobre a sessão. Para iniciarmos essa parte, é necessario colocar o overlay desejado na pasta **Assets.xcassets**.
 >*caso queira utilizar o mesmo overlay que iremos utilizar no tutorial, a imagem encontra-se na pasta **recursos** nomeada **overlay.png**.* 
 
 Após adicionada a imagem na pasta assets é hora de voltarmos ao codigo para declarar uma variavel de referencia ao overlay e uma referencia de UIImageView, que é onde nosso overlay ficara atribuido.
